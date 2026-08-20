@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: secure-internship-portal
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    disk:
+      name: app-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: DATA_DIR
+        value: /data
+      - key: NODE_ENV
+        value: production
